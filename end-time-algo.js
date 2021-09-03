@@ -1,13 +1,13 @@
 var datetime =
   typeof datetime !== "undefined" ? datetime : "2021-09-02T12:45:00.367Z";
 
-console.log("Start Time:", datetime);
+console.log("End Time:", datetime);
 var datetime = new Date(datetime).getTime();
 
 // var now = new Date().getTime();
 var nowDate = "2021-09-02T12:46:00.367Z";
 var now = new Date(nowDate).getTime();
-console.log("Check In Time:", new Date(now));
+console.log("Check Out Time:", new Date(now));
 
 if (isNaN(datetime)) {
   return "";
