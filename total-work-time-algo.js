@@ -188,16 +188,19 @@ employeeWorkDuration = () => {
     );
 };
 
-employeeCheckIn();
+// employeeCheckIn();
 
-console.log();
-console.log("===============================================================");
-console.log();
+// console.log();
+// console.log("===============================================================");
+// console.log();
 
-employeeCheckOut();
+// employeeCheckOut();
 
-console.log();
-console.log("===============================================================");
-console.log();
+// console.log();
+// console.log("===============================================================");
+// console.log();
 
-employeeWorkDuration();
+// employeeWorkDuration();
+
+
+console.log(new Date("2021-09-03T09:33:41.108Z").toString());
