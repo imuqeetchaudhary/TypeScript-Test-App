@@ -15,10 +15,10 @@ if (isNaN(datetime)) {
 
 if (datetime <= now) {
   var milisec_diff = now - datetime;
-  console.log("1");
+  // console.log("1");
 } else if (datetime > now) {
   var milisec_diff = datetime - now;
-  console.log("2");
+  // console.log("2");
 }
 
 var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24));

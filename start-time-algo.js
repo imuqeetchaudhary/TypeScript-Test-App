@@ -6,8 +6,8 @@ var datetime = new Date(datetime).getTime();
 
 var now = new Date().getTime();
 var nowDate = "2021-09-02T03:14:00.367Z";
-var now = new Date(nowDate).getTime();
-// console.log("Check In Time:", new Date(now));
+// var now = new Date(nowDate).getTime();
+console.log("Check In Time:", new Date(now));
 
 if (isNaN(datetime)) {
   return "";
@@ -15,10 +15,10 @@ if (isNaN(datetime)) {
 
 if (datetime <= now) {
   var milisec_diff = now - datetime;
-  console.log("1");
+  // console.log("1");
 } else if (datetime > now) {
   var milisec_diff = datetime - now;
-  console.log("2");
+  // console.log("2");
 }
 
 var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24));

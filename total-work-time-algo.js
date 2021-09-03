@@ -13,9 +13,9 @@ employeeCheckIn = () => {
   var datetime = new Date(datetime).getTime();
 
   var now = new Date().getTime();
-  var nowDate = "2021-09-02T04:15:00.367Z";
+  var nowDate = "2021-09-02T05:15:00.367Z";
   var now = new Date(nowDate).getTime();
-  // console.log("Check In Time:", new Date(now));
+  console.log("Check In Time:", new Date(now));
 
   if (isNaN(datetime)) {
     return "";
@@ -79,7 +79,7 @@ employeeCheckOut = () => {
   var datetime = new Date(datetime).getTime();
 
   // var now = new Date().getTime();
-  var nowDate = "2021-09-02T12:45:00.367Z";
+  var nowDate = "2021-09-02T13:45:00.367Z";
   var now = new Date(nowDate).getTime();
   console.log("Check Out Time:", new Date(now));
 
