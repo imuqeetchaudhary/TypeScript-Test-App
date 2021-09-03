@@ -5,7 +5,7 @@ console.log("End Time:", datetime);
 var datetime = new Date(datetime).getTime();
 
 // var now = new Date().getTime();
-var nowDate = "2021-09-02T12:46:00.367Z";
+var nowDate = "2021-09-02T14:00:00.367Z";
 var now = new Date(nowDate).getTime();
 console.log("Check Out Time:", new Date(now));
 
@@ -14,11 +14,9 @@ if (isNaN(datetime)) {
 }
 
 if (datetime <= now) {
-  // var milisec_diff = datetime - now;
   var milisec_diff = now - datetime;
   console.log("1");
 } else if (datetime > now) {
-  // var milisec_diff = now - datetime;
   var milisec_diff = datetime - now;
   console.log("2");
 }
@@ -36,47 +34,68 @@ console.log("Difference In Hours:", DifferenceInHours);
 console.log("Difference In Minutes:", DifferenceInMinutes);
 console.log("Difference In Seconds:", DifferenceInSeconds);
 
+let checkOutHour = new Date(now).getHours();
+let checkOutMinute = new Date(now).getMinutes();
+
 checkOutHourAndMinute = () => {
-  let checkOutHour = new Date(now).getHours();
-  let checkOutMinute = new Date(now).getMinutes();
   console.log("Check Out Hour:", checkOutHour);
   console.log("Check Out Minute:", checkOutMinute);
 };
 
-if (DifferenceInHours <= 0) {
+if (DifferenceInHours <= 0 && checkOutHour <= 18) {
   if (DifferenceInMinutes <= 15) {
-    checkOutHourAndMinute();
+    if (checkOutHour >= 17 && checkOutHour <= 18) {
+      if (checkOutMinute >= 45 && checkOutMinute <= 59) {
+        checkOutHourAndMinute();
+        console.log("Employee goes on time.");
+        console.log("Over time work:", 0);
+      } else if (checkOutMinute < 45) {
+        checkOutHourAndMinute();
+        console.log("Employee goes before time.");
+        console.log(
+          `Before time is ${DifferenceInHours} hours and ${DifferenceInMinutes} minutes`
+        );
+      } else {
+        checkOutHourAndMinute();
+        console.log("Employee goes before time.");
+        console.log(
+          `Before time is ${DifferenceInHours} hours and ${DifferenceInMinutes} minutes`
+        );
+      }
+    }
+  } else if (checkOutHour <= 17) {
+    if (checkOutMinute <= 45) {
+      checkOutHourAndMinute();
+      console.log("Employee goes before time.");
+      console.log(
+        `Before time is ${DifferenceInHours} hours and ${DifferenceInMinutes} minutes`
+      );
+    } else {
+      checkOutHourAndMinute();
+      console.log("Employee goes before time.");
+      console.log(
+        `Before time is ${DifferenceInHours} hours and ${DifferenceInMinutes} minutes`
+      );
+    }
   } else {
     checkOutHourAndMinute();
+    console.log("Employee goes after time.");
+    console.log(
+      `Total over time is ${DifferenceInHours} hour and ${DifferenceInMinutes} minutes`
+    );
   }
 } else {
-  checkOutHourAndMinute();
+  if (checkOutHour > 16) {
+    checkOutHourAndMinute();
+    console.log("Employee goes after time.");
+    console.log(
+      `Total over time is ${DifferenceInHours} hour and ${DifferenceInMinutes} minutes`
+    );
+  } else {
+    checkOutHourAndMinute();
+    console.log("Employee goes before time.");
+    console.log(
+      `Before time is ${DifferenceInHours} hours and ${DifferenceInMinutes} minutes`
+    );
+  }
 }
-
-//
-//
-//
-//
-//
-//
-
-// if (checkOut >= 17.55 && checkOut <= 18.0) {
-//   checkOut = 18.0;
-//   workHours = checkOut - checkIn - 1;
-//   overTime = 0;
-
-//   console.log("check Out:", checkOut);
-//   console.log("Total Work Hours", workHours);
-//   console.log("Over Time", overTime);
-// } else {
-//   checkOut = checkOut;
-//   workHours = checkOut - checkIn - 1;
-//   overTime = checkOut - 18;
-//   if (overTime < 0) {
-//     overTime = 0;
-//   }
-
-//   console.log("check Out:", checkOut);
-//   console.log("Total Work Hours", workHours);
-//   console.log("Over Time", overTime);
-// }
